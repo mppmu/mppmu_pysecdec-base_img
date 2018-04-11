@@ -89,7 +89,7 @@ ENV \
 RUN true \
     && yum install -y libXdmcp \
     && provisioning/install-sw.sh anaconda2 5.1.0 /opt/anaconda2 \
-    && cd /opt/anaconda2/bin && ln -s nosetests nosetests2
+    && cd /opt/anaconda2/bin && ln -s nosetests nosetests-2.7
 
 
 # Install Nauty:
