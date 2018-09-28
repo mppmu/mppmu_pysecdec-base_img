@@ -119,7 +119,7 @@ ENV \
 RUN true \
     && yum install -y bsdtar \
     && mkdir -p /opt/normaliz/bin \
-    && wget -qO- https://github.com/Normaliz/Normaliz/releases/download/v3.4.0/normaliz-3.4.0Linux64.zip \
+    && wget -qO- https://github.com/Normaliz/Normaliz/releases/download/v3.6.0/normaliz-3.6.0Linux64.zip \
         | bsdtar --strip-components 1 -C /opt/normaliz/bin -x -v -f - \
     && chmod 755 /opt/normaliz/bin/normaliz
 
