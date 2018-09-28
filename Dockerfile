@@ -100,6 +100,33 @@ RUN true \
     && provisioning/install-sw.sh gsl-srcbuild 2.5 /usr
 
 
+# Install CLN:
+
+COPY provisioning/install-sw-scripts/cln-* provisioning/install-sw-scripts/
+
+ENV \
+    LD_LIBRARY_PATH="/opt/cln/lib:$LD_LIBRARY_PATH" \
+    MANPATH="/opt/cln/share/man:$MANPATH" \
+    PKG_CONFIG_PATH="/opt/cln/lib/pkgconfig:$PKG_CONFIG_PATH"
+
+RUN true \
+    && provisioning/install-sw.sh cln-srcbuild 1.3.4 /opt/cln
+
+
+# Install GINAC:
+
+COPY provisioning/install-sw-scripts/ginac-* provisioning/install-sw-scripts/
+
+ENV \
+    LD_LIBRARY_PATH="/opt/ginac/lib:$LD_LIBRARY_PATH" \
+    MANPATH="/opt/ginac/share/man:$MANPATH" \
+    PKG_CONFIG_PATH="/opt/ginac/lib/pkgconfig:$PKG_CONFIG_PATH"
+
+RUN true \
+    && yum install -y texinfo transfig \
+    && provisioning/install-sw.sh ginac-srcbuild 1.7.4 /opt/ginac
+
+
 # Install Nauty:
 
 COPY provisioning/install-sw-scripts/nauty-* provisioning/install-sw-scripts/
