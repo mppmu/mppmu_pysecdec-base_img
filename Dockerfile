@@ -1,4 +1,4 @@
-FROM nvidia/cuda:9.1-cudnn7-devel-centos7
+FROM nvidia/cuda:10.0-cudnn7-devel-centos7
 
 # User and workdir settings:
 
@@ -146,7 +146,7 @@ RUN yum install -y \
 
 RUN true \
     && yum install -y \
-        cuda-nvvp-9-1
+        cuda-nvvp-10-0
 
 
 # Install support for graphical applications:
