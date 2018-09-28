@@ -92,6 +92,14 @@ RUN true \
     && cd /opt/anaconda2/bin && ln -s nosetests nosetests-2.7
 
 
+# Install GSL:
+
+COPY provisioning/install-sw-scripts/gsl-* provisioning/install-sw-scripts/
+
+RUN true \
+    && provisioning/install-sw.sh gsl-srcbuild 2.5 /usr
+
+
 # Install Nauty:
 
 COPY provisioning/install-sw-scripts/nauty-* provisioning/install-sw-scripts/
@@ -134,12 +142,6 @@ ENV \
 
 RUN true \
     && MARCH=core-avx2 provisioning/install-sw.sh form-srcbuild vermaseren/247d829 /opt/form
-
-
-# Install build dependencies
-
-RUN yum install -y \
-        gsl-devel
 
 
 # Install Nvidia visual profiler:
