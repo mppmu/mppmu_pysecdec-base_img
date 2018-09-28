@@ -74,7 +74,7 @@ ENV \
 
 RUN true \
     && yum install -y libXdmcp \
-    && provisioning/install-sw.sh anaconda3 5.1.0 /opt/anaconda3 \
+    && provisioning/install-sw.sh anaconda3 5.2.0 /opt/anaconda3 \
     && cd /opt/anaconda3/bin && ln -s nosetests nosetests3
 
 
@@ -88,7 +88,7 @@ ENV \
 
 RUN true \
     && yum install -y libXdmcp \
-    && provisioning/install-sw.sh anaconda2 5.1.0 /opt/anaconda2 \
+    && provisioning/install-sw.sh anaconda2 5.2.0 /opt/anaconda2 \
     && cd /opt/anaconda2/bin && ln -s nosetests nosetests-2.7
 
 
