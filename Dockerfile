@@ -133,7 +133,7 @@ ENV \
     MANPATH="/opt/form/share/man:$MANPATH"
 
 RUN true \
-    && MARCH=core-avx2 provisioning/install-sw.sh form-srcbuild vermaseren/77ee4ea /opt/form
+    && MARCH=core-avx2 provisioning/install-sw.sh form-srcbuild vermaseren/247d829 /opt/form
 
 
 # Install build dependencies
